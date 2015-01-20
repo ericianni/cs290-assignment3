@@ -10,7 +10,6 @@ in input `a`
 a: the original a number
 */
 function variableModification(a) {
-  prompt(a);
   var plus5;
   var asString;
   var yourNumberIs;
@@ -47,7 +46,16 @@ return true if c is null, false otherwise
 */
 function isNull(c) {
   //your code here
-  if(c == null)
+  if(c == null && typeof c == "object")
+    return true;
+  return false;
+  //end your code
+}
+
+//This function is added because this is the name being called in the testing file
+function isUndefined(c) {
+  //your code here
+  if(c == null && typeof c == "object")
     return true;
   return false;
   //end your code

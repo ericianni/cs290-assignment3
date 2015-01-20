@@ -1,1 +1,7 @@
-You log goes in this  file.
+Start: Mon, 19 Jan 2015 16:51:00 -0500
+End: Mon, 19 Jan 2015 17:30:00 -0500
+Tasks: Started looking over the assignment and getting my repo clone set up. I also began working on functions.js and finished most of it but my isNull isn't working correctly.
+
+Start: Tue, 20 Jan 2015 09:00:00 -0500
+End: Tue, 20 Jan 2015 09:50:00 -0500
+Tasks: I spent an hour trying to get parse to work. My function is UGLY as sin and I will likely revisit it. Took so long because I failed to examine the GitLog documentation and didn't realize I had to convert my string date into a Date()

@@ -10,7 +10,14 @@
 
 function returnObjectLiteral() {
   //your code here
-  return undefined; //Modify ONLY this line
+  var thing = 
+  {
+  	type: 'Goldfish',
+  	brand: 'Pepperidge Farm',
+  	flavor: 'Cheddar',
+  	count: 2000
+  };
+  return thing; //Modify ONLY this line
   //end your code
 }
 
@@ -37,7 +44,51 @@ function returnObjectLiteral() {
 */
 
 //your code here
+function MessageLog(user)
+{
+	this.user = user;
+	this.sent = [];
+	this.numSent = 0;
+	this.numRec = 0;
 
+	this.logMessage = function (messageText, direction)
+	{
+		if(direction == 1)
+		{
+			this.lastRec = messageText;
+			this.numRec++;
+		}
+		else
+			if(direction == 0)
+			{
+				this.sent.shift(messageText);
+				if(this.sent.length > 5)
+					this.sent.pop();
+				this.numSent++;
+			}
+	}
+
+	this.lastReceivedMessage = function ()
+	{
+		if(this.numRec)
+			return this.lastRec;
+		return "No messages received yet.";
+	}
+	this.getSentMessage = function (n)
+	{
+		if(n > this.sent.length)
+			return "There haven't been " + n + "messages sent yet.";
+		return this.sent[n];
+	}
+	this.totalSent = function ()
+	{
+		return this.numSent;
+	}
+	this.totalReceived = function ()
+	{
+		return this.numRec;
+	}
+}
 //end your code
 
 /**
