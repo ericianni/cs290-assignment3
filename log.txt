@@ -5,3 +5,7 @@ Tasks: Started looking over the assignment and getting my repo clone set up. I a
 Start: Tue, 20 Jan 2015 09:00:00 -0500
 End: Tue, 20 Jan 2015 09:50:00 -0500
 Tasks: I spent an hour trying to get parse to work. My function is UGLY as sin and I will likely revisit it. Took so long because I failed to examine the GitLog documentation and didn't realize I had to convert my string date into a Date()
+
+Start: Tue, Jan 20 16:58:00 2015 -500
+End: Tue, Jan 20 17:56:24 2015 -0500
+Tasks: Started at 4:58 - Created an isUndefined function because test.js calls it. Found out that I needed to add a condition to my if() in isNull/isUndefined. Started working on objects.js. Finished returnObjectLiteral. MessageLog is completely written but test.js seems to be incorrect AGAIN! I am beyond frustrated so I am quitting for the night. Still no word from the instructor about the previously reported errors.

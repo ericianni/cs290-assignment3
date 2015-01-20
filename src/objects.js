@@ -61,7 +61,7 @@ function MessageLog(user)
 		else
 			if(direction == 0)
 			{
-				this.sent.shift(messageText);
+				this.sent.unshift(messageText);
 				if(this.sent.length > 5)
 					this.sent.pop();
 				this.numSent++;
@@ -89,6 +89,14 @@ function MessageLog(user)
 		return this.numRec;
 	}
 }
+
+//THIS WAS NOT REQUIRED TO BE DECLARED HERE BUT TESTED ANYWAY
+MessageLog.prototype.lastReceivedMessage = function ()
+{
+	if(this.numRec)
+		return this.lastRec;
+	return "No messages received yet.";
+}
 //end your code
 
 /**
@@ -100,7 +108,10 @@ function MessageLog(user)
 * work.
 */
 //your code here
-
+MessageLog.prototype.systemReceived() = function ()
+{
+	
+}
 //end your code
 
 /**
@@ -109,5 +120,8 @@ function MessageLog(user)
 */
 
 //your code here
-
+var myLog = new MessageLog("BlackHatGuy");
+myLog.logMessage("foo", 1);
+myLog.logMessage("bar", 1);
+myLog.logMessage("baz", 1);
 //end your code
