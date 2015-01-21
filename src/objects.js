@@ -7,16 +7,16 @@
 * It should be returned directly by the following function
 * @return {object} - the object literal
 */
-
-function returnObjectLiteral() {
-  //your code here
-  var thing = 
-  {
+ var thing = 
+ {
   	type: 'Goldfish',
   	brand: 'Pepperidge Farm',
   	flavor: 'Cheddar',
   	count: 2000
-  };
+ };
+
+function returnObjectLiteral() {
+  //your code here
   return thing; //Modify ONLY this line
   //end your code
 }

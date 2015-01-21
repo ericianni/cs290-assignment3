@@ -52,11 +52,11 @@ function isNull(c) {
   //end your code
 }
 
-//This function is added because this is the name being called in the testing file
+/*This function is added because this is the name being called in the testing file
 function isUndefined(c) {
   //your code here
   if(c == null && typeof c == "object")
     return true;
   return false;
   //end your code
-}
+}*/
