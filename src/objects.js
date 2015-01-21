@@ -108,9 +108,10 @@ MessageLog.prototype.lastReceivedMessage = function ()
 * work.
 */
 //your code here
-MessageLog.prototype.systemReceived() = function ()
+MessageLog.prototype.systemReceived = function ()
 {
-	
+	//FIX THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	return this.numRec; //this only does each instance not all of them.
 }
 //end your code
 
