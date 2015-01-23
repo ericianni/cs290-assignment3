@@ -16,5 +16,5 @@ Tasks: Started at 6:30 - created a MessageLog for BlackHatGuy. The comments didn
 
 
 Start: Wed, Jan 21 01:25:00 2015 -0500
-End: Wed, Jan 21 01:35:00 2015 -0500
-Tasks: Pulled down the master from the instructors website and merged with my master. Verified that the code still worked and pushed to my repo.
+End: Wed, Jan 21 01:49:00 2015 -0500
+Tasks: Pulled down the master from the instructors website and merged with my master. Verified that the code still worked and pushed to my repo. Then relocated the object literal outside the function.
