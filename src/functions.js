@@ -88,7 +88,7 @@ function parseGit(logArray)
 		var message = "";
 		split = logArray[iter].split(" ");
 		hash = split[0];
-		date = split[1] + " " + split[2] + " " + split[3] + " " + split[4] + " " + split[5] + " " + split[6];	
+		date = split[1] + ' ' + split[2] + ' ' + split[3] + ' ' + split[4] + ' ' + split[5] + ' ' + split[6].slice(0, split[6].length);
 		for(var i = 7; i < split.length; i++)
 			message += " " + split[i];
 		var re = /\s*"\s*/; //found on MDN reference for .split()
