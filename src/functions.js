@@ -80,22 +80,19 @@ function GitLog(hash, date, message) {
 function parseGit(logArray)
 {
 	var newArray = [];
-	var split = [];
+	var temp = [];
 	var hash;
 	var date;
 	for(var iter = 0; iter < logArray.length; iter++)
 	{
 		var message = "";
-		split = logArray[iter].split(" ");
-		hash = split[0];
-		date = split[1] + ' ' + split[2] + ' ' + split[3] + ' ' + split[4] + ' ' + split[5] + ' ' + split[6].slice(0, split[6].length);
-		for(var i = 7; i < split.length; i++)
-			message += " " + split[i];
-		var re = /\s*"\s*/; //found on MDN reference for .split()
-		message = message.split(re);
-		var temp = new GitLog(hash, new Date(date), message[1]);
+		temp = logArray[iter].split(/"/);
+		message = temp[1];
+		//learned about the first occurence and split() on stackoverflow
+		hash = temp[0].split(/\s(.+)/)[0]; 
+		date = temp[0].split(/\s(.+)/)[1];
+		var temp = new GitLog(hash, new Date(date), message);
 		newArray.push(temp);
-
 	}
 return newArray;
 }
