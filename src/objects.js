@@ -45,6 +45,9 @@ function returnObjectLiteral() {
 */
 
 //your code here
+
+
+
 function MessageLog(user)
 {
 	this.user = user;
@@ -58,6 +61,7 @@ function MessageLog(user)
 		{
 			this.lastRec = messageText;
 			this.numRec++;
+			sysRec++;	//also increaments the system wide message count
 		}
 		else
 			if(direction == 0)
@@ -106,10 +110,15 @@ MessageLog.prototype.lastReceivedMessage = function ()
 * received.
 */
 //your code here
+MessageLog.prototype
+{
+	var sysRec = 0;
+}
+
 MessageLog.prototype.systemReceived = function ()
 {
-	//FIX THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	return this.numRec; //this only does each instance not all of them.
+	
+	return sysRec; //This returns the total amount of messages received.
 }
 //end your code
 
