@@ -7,19 +7,19 @@
 * It should be returned directly by the following function
 * @return {object} - the object literal
 */
- var thing = 
- {
-  	type: 'Goldfish',
-  	brand: 'Pepperidge Farm',
-  	flavor: 'Cheddar',
-  	count: 2000
- };
+var thing =
+{
+	type: 'Goldfish',
+	brand: 'Pepperidge Farm',
+	flavor: 'Cheddar',
+	count: 2000
+};
 
 function returnObjectLiteral() {
   //your code here
   return thing; //Modify ONLY this line
   //end your code
-}
+};
 
 /**
 * Create a constructor function for a `MessageLog` object.
@@ -57,42 +57,42 @@ function MessageLog(user)
 
 	this.logMessage = function (messageText, direction)
 	{
-		if(direction == 1)
+		if(direction === 1)
 		{
 			this.lastRec = messageText;
 			this.numRec++;
 			sysRec++;	//also increaments the system wide message count
 		}
 		else
-			if(direction == 0)
+			if(direction === 0)
 			{
 				this.sent.unshift(messageText);
 				if(this.sent.length > 5)
 					this.sent.pop();
 				this.numSent++;
 			}
-	}
+	};
 
 	this.lastReceivedMessage = function ()
 	{
 		if(this.numRec)
 			return this.lastRec;
 		return "No messages received yet.";
-	}
+	};
 	this.getSentMessage = function (n)
 	{
 		if(n > this.sent.length)
 			return "There haven't been " + n + "messages sent yet.";
 		return this.sent[n];
-	}
+	};
 	this.totalSent = function ()
 	{
 		return this.numSent;
-	}
+	};
 	this.totalReceived = function ()
 	{
 		return this.numRec;
-	}
+	};
 }
 
 //THIS WAS NOT REQUIRED TO BE DECLARED HERE BUT TESTED ANYWAY

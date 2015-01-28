@@ -18,3 +18,7 @@ Tasks: Started at 6:30 - created a MessageLog for BlackHatGuy. The comments didn
 Start: Wed, Jan 21 01:25:00 2015 -0500
 End: Wed, Jan 21 01:49:00 2015 -0500
 Tasks: Pulled down the master from the instructors website and merged with my master. Verified that the code still worked and pushed to my repo. Then relocated the object literal outside the function.
+
+Start: Mon, Jan 25 23:20::00 2015 -0500
+End: Mon, Jan 25 23:49:51 2015 -0500
+Tasks: While helping another student with parseGit I decided I didn't like my brute force method and went in search of a better way. Found said better way on stackoverflow.com

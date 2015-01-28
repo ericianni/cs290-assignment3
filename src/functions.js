@@ -13,8 +13,8 @@
 */
 
 //your code here
-function uselessFunction () {
-	return null;
+function uselessFunction() {
+     return null;
 }
 //end your code
 
@@ -33,23 +33,23 @@ var barType = typeof bar;
 
 //your code here
 bar = function(doubleArray) {
-	for (var i = 0; i < doubleArray.length; i++) 
-	{
-		if(typeof doubleArray[i] === "number")
-			doubleArray[i] *= 2;
-		else
-			return false;
-	}
-	return true;
-}
+     for (var i = 0; i < doubleArray.length; i++)
+     {
+          if (typeof doubleArray[i] === 'number')
+               doubleArray[i] *= 2;
+          else
+               return false;
+     }
+     return true;
+};
 //end your code
 
 /**
 * Creates a new GitLog
-* @class
-* @property {string} hash - the hash of the commit
-* @property {Date} date - the date of the commit as a JS Date object
-* @property {string} message - the commit message
+* @constructor
+* @param {string} hash - the hash of the commit
+* @param {Date} date - the date of the commit as a JS Date object
+* @param {string} message - the commit message
 */
 function GitLog(hash, date, message) {
     this.hash = hash;
@@ -79,21 +79,25 @@ function GitLog(hash, date, message) {
 //your code here
 function parseGit(logArray)
 {
-	var newArray = [];
-	var temp = [];
-	var hash;
-	var date;
-	for(var iter = 0; iter < logArray.length; iter++)
-	{
-		var message = "";
-		temp = logArray[iter].split(/"/);
-		message = temp[1];
-		//learned about the first occurence and split() on stackoverflow
-		hash = temp[0].split(/\s(.+)/)[0]; 
-		date = temp[0].split(/\s(.+)/)[1];
-		var temp = new GitLog(hash, new Date(date), message);
-		newArray.push(temp);
-	}
-return newArray;
+     var newArray = [];
+     var tempStr = [];
+     var hash;
+     var date;
+     for (var iter = 0; iter < logArray.length; iter++)
+     {
+          var message = '';
+          tempStr = logArray[iter].split(/"/);
+          message = tempStr[1];
+          //learned about the first occurence and split() on stackoverflow
+          hash = tempStr[0].split(/\s(.+)/)[0];
+          //the \s is the white space and the (.+) takes everything
+          //after the first and makes it part of the next string.
+          //The [] grabs the string at that index after TempStr
+          //is split.
+          date = tempStr[0].split(/\s(.+)/)[1];
+          var temp = new GitLog(hash, new Date(date), message);
+          newArray.push(temp);
+     }
+     return newArray;
 }
 //end your code
