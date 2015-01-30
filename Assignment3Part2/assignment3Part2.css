@@ -1,0 +1,32 @@
+#favorites {
+	float: right;
+	background-color: red;
+	height: 900px;
+	width:	50%;
+}
+
+#gistList {
+	float: left;
+	background-color: orange;
+	height: 900px;
+	width: 50%;
+}
+
+#searchBar {
+	float: left;
+	background-color: blue;
+	height: 200px;
+	width: 100%;
+}
+
+.form {
+	color: white;
+	float: left;
+}
+
+#fav_heading {
+	background-color: purple;
+	padding: 40px;
+	margin: 10px;
+	text-align: center;
+}
