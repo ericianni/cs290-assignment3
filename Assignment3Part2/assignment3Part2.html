@@ -12,19 +12,19 @@
 		<form name="languages">
 			<ul>
 				<li>
-					Python<input type="checkbox" checked="true" name="python">
+					Python<input type="checkbox" id="Python" name="checks">
 				</li>
 				<li>
-					JavaScript<input type="checkbox" checked="true" name="javascript">
+					JavaScript<input type="checkbox" id="JavaScript" name="checks">
 				</li>
 				<li>
-					JSON<input type="checkbox" checked="true" name="json">
+					JSON<input type="checkbox" id="JSON" name="checks">
 				</li>
 				<li>
-					SQL<input type="checkbox" checked="true" name="sql">
+					SQL<input type="checkbox" id="SQL" name="checks">
 				</li>
 			</ul>
-			<button id="filter" type="submit" value="SUBMIT">Filter Results</button>
+			<input type="button" value="SEARCH" onclick="filter()">
 			</div>
 			<div class="form">
 		</form>
@@ -54,15 +54,7 @@
 		
 	</div>
 	<div id="gistList">
-		<!--<div class="listing">
-			<div class="description"></div>
-			<div class="fav_button"></div>
-			<div class="language"></div>
-			<div class="webpage">
-				<script class="portal" src="https://gist.github.com/anonymous/f4387191f1cad0cd7a91.js"></script>
-			</div>
-		</div>-->
-		
+	<div id="gist_heading">Gist List</div>
 	</div>
 	<div id="favorites">
 		<div id="fav_heading">Favorites</div>

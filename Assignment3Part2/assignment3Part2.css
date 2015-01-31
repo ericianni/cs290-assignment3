@@ -1,23 +1,25 @@
+body {
+	background-color: blue;
+}
+
 #favorites {
-	float: right;
 	background-color: red;
-	height: 900px;
+	min-height: 900px;
 	width:	50%;
-	position: relative;
 	top: -25px;
 	border-radius: 25px;
-
+	left: +50%;
+	top: +200px;
+	float: right;
 }
 
 #gistList {
 	float: left;
 	background-color: orange;
-	height: 100%;
+	min-height: 900px;
 	width: 50%;
-	position: relative;
 	top: -25px;
 	border-radius: 25px;
-	overflow: hidden;
 }
 
 #searchBar {
@@ -40,19 +42,20 @@
 	border-radius: 25px;
 }
 
-.listing {
-	/*overflow: auto;*/
-	float: center;
-	width: 90%;
-	height: 125px;
-	position: relative;
-	padding:10px;
+#gist_heading {
+	background-color: purple;
+	padding: 40px;
+	margin: 10px;
+	text-align: center;
+	border-radius: 25px;
+}
+
+.listing, .favorite {
+	margin-left: 10px;
 }
 
 .description {
-	position: relative;
 	float: left;
-	height: 10px;
 	width: 80%;
 	background-color: green;
 	border-radius: 25px;
@@ -61,21 +64,20 @@
 }
 
 .fav_button {
-	position: relative;
 	float: left;
-	height: 50px;
+	
 	width: 20%;
 	background-color: black;
 	border-radius: 25px;
 	text-align: center;
+	color: pink;
+	padding: 20px;
 
 }
 
 .language {
-	position: relative;
 	float: left;
-	height: 10px;
-	width: 60%;
+	width: 45%;
 	background-color: yellow;
 	border-radius: 25px;
 	text-align: center;
@@ -83,19 +85,16 @@
 
 }
 
-.webpage {
-	position: relative;
+/*.webpage {
 	float: left;
-	overflow: auto;
 	margin: 10px;
 	width: 100%;
 	height: 150px;
 }
 
 .portal {
-	position: relative;
 	float: left;
 	overflow: scroll;
 	height: 150px;
 	width: 90%;
-}
+}*/
