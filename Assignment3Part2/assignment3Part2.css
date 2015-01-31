@@ -3,13 +3,22 @@
 	background-color: red;
 	height: 900px;
 	width:	50%;
+	position: relative;
+	top: -25px;
+	border-radius: 25px;
+
 }
 
 #gistList {
 	float: left;
 	background-color: orange;
-	height: 900px;
+	height: 100%;
 	width: 50%;
+	position: relative;
+	top: -25px;
+	border-radius: 25px;
+
+	overflow: hidden;
 }
 
 #searchBar {
@@ -29,4 +38,18 @@
 	padding: 40px;
 	margin: 10px;
 	text-align: center;
+	border-radius: 25px;
+}
+
+.webpage {
+	
+}
+
+.listing {
+	overflow: auto;
+	float: center;
+	width: 90%;
+	height: 200px;
+	position: relative;
+	padding:10px;
 }

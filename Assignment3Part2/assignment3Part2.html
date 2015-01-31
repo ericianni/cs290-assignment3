@@ -3,10 +3,13 @@
 <head>
 	<title>Assignment 3 Part 2</title>
 	<link rel="stylesheet" type="text/css" href="assignment3Part2.css">
+	<script src="assignment3Part2.js"></script>
+
 </head>
 <body>
 	<div id="searchBar">
-		<div class="form"><form name="languages">
+		<div class="form">
+		<form name="languages">
 			<ul>
 				<li>
 					Python<input type="checkbox" checked="true" name="python">
@@ -25,32 +28,38 @@
 			</div>
 			<div class="form">
 		</form>
-			<form name="numPages">
+		<form name="numPages">
 			<ul>
 				<li>
-					1 Page<input type="radio"  value="1Page" name="pages" checked>
+					1 Page<input type="radio"  value="1" name="pages" checked>
 				</li>
 				<li>
-					2 Pages<input type="radio"  value="2Pages" name="pages">
+					2 Pages<input type="radio"  value="2" name="pages">
 				</li>
 				<li>
-					3 Pages<input type="radio"  value="3Pages" name="pages">
+					3 Pages<input type="radio"  value="3" name="pages">
 				</li>
 				<li>
-					4 Pages<input type="radio"  value="4Pages" name="pages">
+					4 Pages<input type="radio"  value="4" name="pages">
 				</li>
 				<li>
-					5 Pages<input type="radio"  value="5Pages" name="pages">
+					5 Pages<input type="radio"  value="5" name="pages">
 				</li>
 			</ul>
 			</ul>
-			<button id="select_pages" type="submit" value="SUBMIT">Submit</button>
+			<input id="select_pages" type="button" value="SUBMIT" onclick="loadPages()">
 		</form>
 		</div>
 		
 		
 	</div>
 	<div id="gistList">
+		<div class="listing"><script src="https://gist.github.com/anonymous/f4387191f1cad0cd7a91.js"></script>
+		
+		</div>
+		<div class="listing">
+		<object class="webpage" type="text/html" data="https://gist.github.com/anonymous/f4387191f1cad0cd7a91"></object>
+		</div>
 	</div>
 	<div id="favorites">
 		<div id="fav_heading">Favorites</div>
