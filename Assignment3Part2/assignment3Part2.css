@@ -17,7 +17,6 @@
 	position: relative;
 	top: -25px;
 	border-radius: 25px;
-
 	overflow: hidden;
 }
 
@@ -41,15 +40,62 @@
 	border-radius: 25px;
 }
 
-.webpage {
-	
-}
-
 .listing {
-	overflow: auto;
+	/*overflow: auto;*/
 	float: center;
 	width: 90%;
-	height: 200px;
+	height: 125px;
 	position: relative;
 	padding:10px;
+}
+
+.description {
+	position: relative;
+	float: left;
+	height: 10px;
+	width: 80%;
+	background-color: green;
+	border-radius: 25px;
+	text-align: center;
+	padding: 20px;
+}
+
+.fav_button {
+	position: relative;
+	float: left;
+	height: 50px;
+	width: 20%;
+	background-color: black;
+	border-radius: 25px;
+	text-align: center;
+
+}
+
+.language {
+	position: relative;
+	float: left;
+	height: 10px;
+	width: 60%;
+	background-color: yellow;
+	border-radius: 25px;
+	text-align: center;
+	padding: 20px;
+
+}
+
+.webpage {
+	position: relative;
+	float: left;
+	overflow: auto;
+	margin: 10px;
+	width: 100%;
+	height: 150px;
+}
+
+.portal {
+	position: relative;
+	float: left;
+	overflow: scroll;
+	height: 150px;
+	width: 90%;
 }
