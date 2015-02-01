@@ -21,7 +21,7 @@ window.onload = function() {
 /**
  * Makes the request to github for the gists. Uses the passed number
  * to load a specific page. Parses the results and stores locally.
- * @param number
+ * @param {number} number
  */
 function loadPages(number)
 {
@@ -63,17 +63,15 @@ function loadPages(number)
 
 /**
  * Creates an XMLHttpRequest as appropriate per the browser.
- * @return returns a new XMLHttpRequest()}
+ * @return {xmlHTTP} returns a new XMLHttpRequest()}
  */
 function createXmlHttpRequestObject() {
         var xmlHttp;
-       
         if (window.XMLHttpRequest) {
                 xmlHttp = new XMLHttpRequest();
         }else {
-                xmlHttp = new ActiveXOjbect("Microsoft.XMLHTTP");
+                xmlHttp = new ActiveXOjbect('Microsoft.XMLHTTP');
         }
-       
         return xmlHttp;
 }
 
@@ -81,9 +79,9 @@ function createXmlHttpRequestObject() {
  * Function to parse any JSON element passed. Will also create
  * DOM elements based upon the type and then call a function
  * to filter the results
- * @param  JSONELEM is the JSON element to be parsed
- * @param  type is either 'favorite' or 'listing'
- * @param  filter is the key(s) to filter the gists with
+ * @param  {string} JSONELEM is the JSON element to be parsed
+ * @param  {string} type is either 'favorite' or 'listing'
+ * @param  {array} filter is the key(s) to filter the gists with
  */
 function parseJSONElem(JSONELEM, type, filter)
 {
@@ -109,8 +107,8 @@ function parseJSONElem(JSONELEM, type, filter)
 
 /**
  * Checks to see if the element matches the filter key(s)
- * @param  elem is the DOM element to be checked
- * @param  filter is the key(s) to check with
+ * @param  {DOM} elem is the DOM element to be checked
+ * @param  {array} filter is the key(s) to check with
  * @return {Boolean}
  */
 function isFiltered(elem, filter) {
@@ -136,7 +134,7 @@ function isFiltered(elem, filter) {
 /**
  * Checks to see if a certain element is a favorite so it isn't
  * displayed in the Gist results
- * @param elem DOM element to be checked
+ * @param {DOM} elem DOM element to be checked
  * @return {Boolean}
  */
 function isFav(elem) {
@@ -156,9 +154,9 @@ function isFav(elem) {
 
 /**
  * [getValue description]
- * @param  obj to be searched
- * @param  name the key to be searched for
- * @return returns a string of the desired field
+ * @param {object} obj to be searched
+ * @param {string} name the key to be searched for
+ * @return {string} returns a string of the desired field
  */
 function getValue(obj, name) {
     var prop;
@@ -176,7 +174,7 @@ function getValue(obj, name) {
 /**
  * Takes a parsed JSON object and saves only the needed
  * info in a constructor format
- * @param  obj is a parsed JSON object
+ * @param {object} obj is a parsed JSON object
  * @this listing
  */
 function listing(obj) {
@@ -196,9 +194,9 @@ function listing(obj) {
 /**
  * Creates and appends DOM objects to one another to form
  * a new Gist Listing or Favorite
- * @param  obj is an object constructed from parsed JSON
- * @param  type is either 'listing' or 'favorite'
- * @return returns a new DOM element ready to be added to
+ * @param {object} obj is an object constructed from parsed JSON
+ * @param  {string} type is either 'listing' or 'favorite'
+ * @return {DOM} a new DOM element ready to be added to
  * the page
  */
 function createListingElem(obj, type) {
@@ -250,7 +248,7 @@ function createListingElem(obj, type) {
 /**
  * Takes the passed listing and changes the attributes of the
  * DOM element so that it will appear in the Favorites Section
- * @param listing is the DOM element to be modified
+ * @param {string} listing is the DOM element to be modified
  */
 function set_Favorite(listing) {
     //copies the listing to a new object
@@ -277,28 +275,26 @@ function set_Favorite(listing) {
     var id = listing.getAttribute('id');
     //creates a new object to be assigned the passed listing
     list_obj = new Object();
-    //loops through the objects in local until finding the passed
-    //listing and then sets list_obj to that listing
-    for (var prop in local) {
-        if (local[prop].id == id)
-        {
-            list_obj = local[prop];
-        }
-
-    }
+    //builds a new object from the elements from the DOM element
+    //should be it's own function but this works for now
+    list_obj.id = listing.getAttribute('id');
+    var tempLanguage = listing.getElementsByClassName('language');
+    list_obj.language = tempLanguage[0].textContent;
+    var tempDescription = listing.getElementsByClassName('description');
+    list_obj.description = tempDescription[0].textContent;
+    var url = listing.getElementsByClassName('description')[0].innerHTML;
+    //removes the html tags from the url
+    url = url.split('\"')[1];
+    list_obj.url = url;
     var fav_list = [];
-    if (typeof list_obj != 'object') {
-        alert('The favorite wasn\'t found in the parsed list');
+    //if no favorites are stored, push list_object onto empty array
+    if (localStorage.getItem('fav_list') === null) {
+        fav_list.push(list_obj);
     } else {
-        //if no favorites are stored, push list_object onto empty array
-        if (localStorage.getItem('fav_list') === null) {
-            fav_list.push(list_obj);
-        } else {
-            //if there are locally saved favorites parse them and
-            //push the new favorite onto the array
-            fav_list = JSON.parse(localStorage.getItem('fav_list'));
-            fav_list.push(list_obj);
-        }
+        //if there are locally saved favorites parse them and
+        //push the new favorite onto the array
+        fav_list = JSON.parse(localStorage.getItem('fav_list'));
+        fav_list.push(list_obj);
     }
     //save all changes to localStorage in JSON format
     localStorage.setItem('fav_list', JSON.stringify(fav_list));
@@ -321,7 +317,7 @@ function loadFavorites() {
 
 /**
  * Removes a favorite when it's button is clicked
- * @param  favorite is the favorite to remove
+ * @param {DOM} favorite is the favorite to remove
  */
 function remove_Favorite(favorite) {
     //copies the favorite so it can be added back to Gist Results
@@ -331,9 +327,12 @@ function remove_Favorite(favorite) {
     //changes the button to favorite instead of remove
     elem.getElementsByClassName('fav_button')[0].setAttribute('onclick',
         'set_Favorite(this.parentNode)');
+    //changes the text field of the button to "Favorite"
+    elem.getElementsByClassName('fav_button')[0].textContent =
+        'Favorite';
     //pulls the favorites div
     var favorites = document.getElementById('favorites');
-    //removes the favorite from teh favorite div
+    //removes the favorite from the favorite div
     favorites.removeChild(document.getElementById(favorite.id));
     //appends the modified element to the gist Result section
     var gistList = document.getElementById('gistList');
@@ -359,7 +358,8 @@ function remove_Favorite(favorite) {
     localStorage.setItem('fav_list', JSON.stringify(temp));
     //calls the filter function to make sure the element we just
     //added to the listings section isn't being filtered out
-    filter();
+    if (localStorage.getItem('listings').length > 2)
+        filter();
 }
 
 /**
@@ -393,8 +393,8 @@ function filter() {
 
 /**
  * Empties the passed DOM element of all gists
- * @param  elem is the id of the element to empty
- * @param  type is the classname of the items to be removed
+ * @param {DOM} elem is the id of the element to empty
+ * @param {string} type is the classname of the items to be removed
  */
 function emptyElement(elem, type) {
     //pulls the DOM element with the id in elem

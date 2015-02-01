@@ -83,4 +83,9 @@ But when I change the thing following @param to anything other than
 the parameter name in the function header it also gives me an error
 saying it was expecting the name from the header.
 
-
+Start: Sun, Feb 1 16:30:00 -500
+End: Sun, Feb 1 17:45:00 -500
+Tasks: Fixed the issue with my CORS problem with the help of Mr. Wilford.
+Noticed an error with loading the page with saved favorites and then unfavorting
+and then favoriting again creating empty objects in fav_list saved locally.
+Changed the approach of how I built the objects to add to fav_list.
