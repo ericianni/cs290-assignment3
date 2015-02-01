@@ -12,7 +12,7 @@ window.onload = function() {
 /**
  * Makes the request to github for the gists. Uses the passed number
  * to load a specific page. Parses the results and stores locally.
- * @param number to signal which page to load
+ * @param number
  */
 function loadPages(number)
 {
@@ -109,7 +109,7 @@ function isFiltered(elem, filter) {
 /**
  * Checks to see if a certain element is a favorite so it isn't
  * displayed in the Gist results
- * @param  elem DOM element to be checked
+ * @param elem DOM element to be checked
  * @return {Boolean}
  */
 function isFav(elem) {
@@ -147,9 +147,10 @@ function getValue(obj, name) {
 }
 
 /**
- * Takes a parsed JSON object and saves only the needed 
+ * Takes a parsed JSON object and saves only the needed
  * info in a constructor format
  * @param  obj is a parsed JSON object
+ * @this listing
  */
 function listing(obj) {
     this.language = getValue(obj['files'], 'language');
@@ -170,11 +171,11 @@ function listing(obj) {
  * a new Gist Listing or Favorite
  * @param  obj is an object constructed from parsed JSON
  * @param  type is either 'listing' or 'favorite'
- * @return returns a new DOM element ready to be added to 
+ * @return returns a new DOM element ready to be added to
  * the page
  */
 function createListingElem(obj, type) {
-    //starts by creating a new container div and 
+    //starts by creating a new container div and
     //assigns the desired class and id
     var listing = document.createElement('div');
     listing.setAttribute('class', type);
@@ -238,14 +239,14 @@ function set_Favorite(listing) {
         'remove_Favorite(this.parentNode)');
     //changes the text field of the button to "UnFavorite"
     elem.getElementsByClassName('fav_button')[0].textContent =
-        "UnFavorite";
+        'UnFavorite';
     //favorites is the DOM element that holds the saved favorites
     var favorites = document.getElementById('favorites');
     //appends the modifed element
     favorites.appendChild(elem);
     //local is used to hold the list of gist objects
     var local = JSON.parse(localStorage.getItem('listings'));
-    //pulls the id of the passed listing 
+    //pulls the id of the passed listing
     var id = listing.getAttribute('id');
     //creates a new object to be assigned the passed listing
     list_obj = new Object();
@@ -277,7 +278,7 @@ function set_Favorite(listing) {
 }
 
 /**
- * Loads the favorites from localStorage and appends them to 
+ * Loads the favorites from localStorage and appends them to
  * the favorites section
  */
 function loadFavorites() {
@@ -329,7 +330,7 @@ function remove_Favorite(favorite) {
     }
     //saves the new favorites list to localStorage
     localStorage.setItem('fav_list', JSON.stringify(temp));
-    //calls the filter function to make sure the element we just 
+    //calls the filter function to make sure the element we just
     //added to the listings section isn't being filtered out
     filter();
 }
