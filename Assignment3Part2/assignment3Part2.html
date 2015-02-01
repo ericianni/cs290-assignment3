@@ -9,53 +9,34 @@
 <body>
 	<div id="searchBar">
 		<div class="form">
-		<form name="languages">
-			<ul>
-				<li>
-					Python<input type="checkbox" id="Python" name="checks">
-				</li>
-				<li>
-					JavaScript<input type="checkbox" id="JavaScript" name="checks">
-				</li>
-				<li>
-					JSON<input type="checkbox" id="JSON" name="checks">
-				</li>
-				<li>
-					SQL<input type="checkbox" id="SQL" name="checks">
-				</li>
-			</ul>
-			<input type="button" value="SEARCH" onclick="filter()">
-			</div>
-			<div class="form">
-		</form>
-		<form name="numPages">
-			<ul>
-				<li>
-					1 Page<input type="radio"  value="1" name="pages" checked>
-				</li>
-				<li>
-					2 Pages<input type="radio"  value="2" name="pages">
-				</li>
-				<li>
-					3 Pages<input type="radio"  value="3" name="pages">
-				</li>
-				<li>
-					4 Pages<input type="radio"  value="4" name="pages">
-				</li>
-				<li>
-					5 Pages<input type="radio"  value="5" name="pages">
-				</li>
-			</ul>
-			</ul>
-			<input id="select_pages" type="button" value="SUBMIT" onclick="loadPages()">
-		</form>
+			<form name="languages">
+				
+						Python<input type="checkbox" id="Python" name="checks">
+					
+						JavaScript<input type="checkbox" id="JavaScript" name="checks">
+					
+						JSON<input type="checkbox" id="JSON" name="checks">
+				
+						SQL<input type="checkbox" id="SQL" name="checks">
+			
+				<input type="button" value="SEARCH" onclick="filter()">
+			</form>
 		</div>
-		
-		
+		<div id="pages">
+		<div class="pageSelect" id="1" onclick="loadPages(this.id)">Page1</div>
+		<div class="pageSelect" id="2" onclick="loadPages(this.id)">Page2</div>
+		<div class="pageSelect" id="3" onclick="loadPages(this.id)">Page3</div>
+		<div class="pageSelect" id="4" onclick="loadPages(this.id)">Page4</div>
+		<div class="pageSelect" id="5" onclick="loadPages(this.id)">Page5</div>
 	</div>
+	</div>
+		
+	
 	<div id="gistList">
-	<div id="gist_heading">Gist List</div>
+		<div id="gist_heading">Gist List</div>
+		
 	</div>
+	
 	<div id="favorites">
 		<div id="fav_heading">Favorites</div>
 	</div>

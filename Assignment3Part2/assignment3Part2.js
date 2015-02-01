@@ -1,30 +1,18 @@
 window.onload = function() {
-    loadFavorites();
+    loadFavorites();        //loads the favorites from localStorage
     var temp = [];
+    //wipes any localStorage for pages and listings upon fresh load
     localStorage.setItem('pages', JSON.stringify(temp));
     localStorage.setItem('listings', JSON.stringify(temp));
 };
 
-//fix the localstorage
-
-function loadPages()
+function loadPages(number)
 {
     emptyElement('gistList', 'listing');
-    var radios = document.getElementsByName('pages');
-    var numOfPages;
     var url;
     var pages = new XMLHttpRequest();
-    for (var x = 0; x < radios.length; x++)
-    {
-        if (radios[x].checked == true)
-        {
-            numOfPages = radios[x].value;
-        }
-    }
-
-    url = 'http://api.github.com/gists/public?page=' + numOfPages;
-    //prompt(url);
-    //prompt(url);
+    
+    url = 'http://api.github.com/gists/public?page=' + number;
     pages.open('GET', url, true);
     pages.send();
 
@@ -87,7 +75,6 @@ function getValue(obj, name) {
     var prop;
     var data;
     for (prop in obj) {
-        //console.log(temp);
         for (data in obj[prop]) {
             if (data == name)
                 return String(obj[prop][data]);
@@ -121,32 +108,22 @@ function createListingElem(obj, type) {
     language.setAttribute('class', 'language');
     language.textContent = obj.language;
     listing.appendChild(language);
-    
+
     var fav_button = document.createElement('div');
     fav_button.setAttribute('class', 'fav_button');
     if (type === 'listing') {
-        fav_button.textContent = "Favorite";
+        fav_button.textContent = 'Favorite';
         fav_button.setAttribute('onclick', 'set_Favorite(this.parentNode)');
     } else {
         if (type === 'favorite') {
-                    fav_button.setAttribute('onclick', 'remove_Favorite(this.parentNode)');
-                    fav_button.textContent = "UnFavorite";
+                    fav_button.setAttribute('onclick',
+                        'remove_Favorite(this.parentNode)');
+                    fav_button.textContent = 'UnFavorite';
         } else {
             alert('There was an error with the type of listing');
         }
     }
     listing.appendChild(fav_button);
-
-    /*var webpage = document.createElement('div');
-    webpage.setAttribute('class', 'webpage');
-
-    var script = document.createElement('script')
-    script.setAttribute('class', 'portal');
-    script.setAttribute('src', obj.url + '.js');
-    webpage.appendChild(script);
-
-    listing.appendChild(webpage);*/
-
     return listing;
 }
 
@@ -181,10 +158,6 @@ function set_Favorite(listing) {
         }
     }
     localStorage.setItem('fav_list', JSON.stringify(fav_list));
-    
-    //for()
-    //console.log(test);
-    //console.log(test[0]);
 }
 
 function loadFavorites() {
@@ -211,18 +184,14 @@ function remove_Favorite(favorite) {
     list_obj = new Object();
     temp = [];
 
-    //console.log('full',local);
     for (var prop in local) {
-        //console.log(local[prop].id);
         if (local[prop].id != id)
         {
             list_obj = local[prop];
             temp.push(list_obj);
-            //console.log('inside if localpropid');
         }
 
     }
-    //console.log(temp);
     localStorage.setItem('fav_list', JSON.stringify(temp));
     filter();
 }
@@ -250,12 +219,6 @@ function emptyElement(elem, type) {
     while (toRemove.length) {
         id = toRemove[0].id;
         temp.removeChild(document.getElementById(id));
-        //alert(toRemove.length);
     }
 
 }
-/*var elem = favorite;
-    elem.setAttribute('class', 'gistList');
-    elem.getElementsByClassName('fav_button')[0].setAttribute('onclick', 'set_Favorite(this.parentNode)');
-    var favorites = document.getElementById('favorites');
-    favorites.removeChild(document.getElementById(favorite.id));*/

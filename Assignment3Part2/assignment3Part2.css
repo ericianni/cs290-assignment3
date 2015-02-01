@@ -6,10 +6,7 @@ body {
 	background-color: red;
 	min-height: 900px;
 	width:	50%;
-	top: -25px;
 	border-radius: 25px;
-	left: +50%;
-	top: +200px;
 	float: right;
 }
 
@@ -18,37 +15,36 @@ body {
 	background-color: orange;
 	min-height: 900px;
 	width: 50%;
-	top: -25px;
 	border-radius: 25px;
 }
 
 #searchBar {
+	left: 10px;
+	position: relative;
 	float: left;
 	background-color: blue;
-	height: 200px;
+	height: 40px;
 	width: 100%;
+	z-index: -2;
 }
 
 .form {
+	position: relative;
 	color: white;
-	float: left;
+	float: right;
+	left: -15px;
 }
 
-#fav_heading {
+#fav_heading, #gist_heading {
 	background-color: purple;
-	padding: 40px;
+	padding: 10px;
 	margin: 10px;
 	text-align: center;
+	font-weight: bold;
 	border-radius: 25px;
+	color: white;
 }
 
-#gist_heading {
-	background-color: purple;
-	padding: 40px;
-	margin: 10px;
-	text-align: center;
-	border-radius: 25px;
-}
 
 .listing, .favorite {
 	margin-left: 10px;
@@ -56,35 +52,61 @@ body {
 
 .description {
 	float: left;
-	width: 80%;
+	width: 90%;
 	background-color: green;
 	border-radius: 25px;
 	text-align: center;
-	padding: 20px;
+	padding: 10px;
 }
 
 .fav_button {
 	float: left;
 	
-	width: 20%;
+	width: 30%;
 	background-color: black;
 	border-radius: 25px;
 	text-align: center;
 	color: pink;
-	padding: 20px;
+	padding: 10px;
 
+}
+
+.fav_button:hover {
+	background-color: white;
+	color: black;
 }
 
 .language {
 	float: left;
-	width: 45%;
+	width: 55%;
 	background-color: yellow;
 	border-radius: 25px;
 	text-align: center;
-	padding: 20px;
+	padding: 10px;
 
 }
 
+#pages {
+	position: absolute;
+	z-index: -1;
+}
+.pageSelect {
+	position: relative;
+	float: left;
+	background-color: white;
+	color: black;
+	padding-top: 10px;
+	padding-bottom: 40px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 25px;
+	top: 10px;
+	
+}
+
+.pageSelect:hover {
+	background-color: lightgreen;
+}
 /*.webpage {
 	float: left;
 	margin: 10px;
