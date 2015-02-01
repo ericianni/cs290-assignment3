@@ -1,28 +1,86 @@
 Start: Mon, 19 Jan 2015 16:51:00 -0500
 End: Mon, 19 Jan 2015 17:30:00 -0500
-Tasks: Started looking over the assignment and getting my repo clone set up. I also began working on functions.js and finished most of it but my isNull isn't working correctly.
+Tasks: Started looking over the assignment and getting my repo clone set up. 
+I also began working on functions.js and finished most of it but my isNull 
+isn't working correctly.
 
 Start: Tue, 20 Jan 2015 09:00:00 -0500
 End: Tue, 20 Jan 2015 09:50:00 -0500
-Tasks: I spent an hour trying to get parse to work. My function is UGLY as sin and I will likely revisit it. Took so long because I failed to examine the GitLog documentation and didn't realize I had to convert my string date into a Date()
+Tasks: I spent an hour trying to get parse to work. My function is UGLY as 
+sin and I will likely revisit it. Took so long because I failed to examine 
+the GitLog documentation and didn't realize I had to convert my string date 
+into a Date()
 
 Start: Tue, Jan 20 16:58:00 2015 -500
 End: Tue, Jan 20 17:56:24 2015 -0500
-Tasks: Started at 4:58 - Created an isUndefined function because test.js calls it. Found out that I needed to add a condition to my if() in isNull/isUndefined. Started working on objects.js. Finished returnObjectLiteral. MessageLog is completely written but test.js seems to be incorrect AGAIN! I am beyond frustrated so I am quitting for the night. Still no word from the instructor about the previously reported errors.
+Tasks: Started at 4:58 - Created an isUndefined function because test.js calls
+it. Found out that I needed to add a condition to my if() in isNull/isUndefined.
+Started working on objects.js. Finished returnObjectLiteral. MessageLog is 
+completely written but test.js seems to be incorrect AGAIN! I am beyond frustrated 
+so I am quitting for the night. Still no word from the instructor about the 
+previously reported errors.
 
 Start: Tue, Jan 20 18:30 2015 -0500
 End: Tue, Jan 20 18:44:10 2015 -0500
-Tasks: Started at 6:30 - created a MessageLog for BlackHatGuy. The comments didn't specify a name for the variable. I had to look in test.js to find out it needed to be called myLog. Unsure how to do systemReceived(). It isn't specified in the test document so I am unsure how they want the function to be tested.
-
+Tasks: Started at 6:30 - created a MessageLog for BlackHatGuy. The comments 
+didn't specify a name for the variable. I had to look in test.js to find out 
+it needed to be called myLog. Unsure how to do systemReceived(). It isn't 
+specified in the test document so I am unsure how they want the function to be tested.
 
 Start: Wed, Jan 21 01:25:00 2015 -0500
 End: Wed, Jan 21 01:49:00 2015 -0500
-Tasks: Pulled down the master from the instructors website and merged with my master. Verified that the code still worked and pushed to my repo. Then relocated the object literal outside the function.
+Tasks: Pulled down the master from the instructors website and merged with my master. 
+Verified that the code still worked and pushed to my repo. Then relocated the object
+literal outside the function.
 
 Start: Mon, Jan 25 23:20::00 2015 -0500
 End: Mon, Jan 25 23:49:51 2015 -0500
-Tasks: While helping another student with parseGit I decided I didn't like my brute force method and went in search of a better way. Found said better way on stackoverflow.com
+Tasks: While helping another student with parseGit I decided I didn't like my brute 
+force method and went in search of a better way. Found said better way on stackoverflow.com
 
 Start: Fri, Jan 30 13:5:00 2015 -500
 End: Fri, Jan 30 14:30:00 2015 -0500
 Tasks: Created files need to start Part2. Created shell of HTML page layout.
+
+Start: Fri, Jan 30 17:34:00 2015 -500
+End: Sat, Jan 31 08:22:12 2015 -0500
+Tasks: This commit was worked on over a few hours (4 hours total). This was
+more trouble than it needed to be. I finally was able to access the
+language element. Hopefully the rest will fall into place.
+
+Start: Sat, Jan 31 08:30:00 2015 -500
+End: Sat, Jan 31 11:54:28 2015 -0500
+Tasks: Almost four hours and I have got the gists to load and I can
+seclect favorites and they will show up on page load,but I am
+about try to remove favorites and then filtering. Committing
+because this is a stable version.
+
+Start: Sat, Jan 31 11:54:00 2015 -500
+End: Sat, Jan 31 18:02:33 2015 -0500
+Tasks: Been working since 8:30 this morning. I feel this commit is stable
+and feature complete. I am now going to try to spruce it up a tad.
+
+Start: Sat, Jan 31 10:02:00 2015 -500
+End: Sat, Jan 31 19:20:00 2015 -0500
+Tasks: I have now been working on this for 11 solid hours today. The page
+is feature complete and looks mostly polished. The material did not
+prepare me for this assignment. The amount of googling I had to do
+was astronomical.
+
+Start: Sun, Feb 1 03:30:00 2015 -500
+End: Sun, Feb 1 04:31:56 2015 -0500
+Tasks: About an hour changing some functionality. Originally thought the phrase
+"filter out" meant remove the languages checked. Having read Canvas
+I decided I was probaly wrong. Also changed the functionality of SEARCH
+to better match Mr. Wilford's comments on Canvas. Code is commented and
+I am not running through gjslint
+
+Start: Sun, Feb 1 04:31:00 2015 -500
+End: Sun, Feb 1 04:47:51 2015 -0500
+Tasks: Was trying to get my code to pass gjslint without any errors but
+I can't. All my @param say I am missing a type in the @param tag.
+But when I change the thing following @param to anything other than
+the parameter name in the function header it also gives me an error
+saying it was expecting the name from the header.
+
+

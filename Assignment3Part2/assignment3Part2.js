@@ -1,4 +1,13 @@
 /**
+ * Author: Eric Ianni
+ * Date: 02/01/2015
+ * File: assignment3Part2.js
+ * Description: This program demonstrates the use of AJAX calls
+ * from github.com/gists. The program parses the response and stores
+ * the pertinent information localy allowing the user to set favorites
+ * and to also filter the results.
+ */
+/**
  * When the window loads primes localStorage
  */
 window.onload = function() {
@@ -20,13 +29,15 @@ function loadPages(number)
     emptyElement('gistList', 'listing');
     var url;
     //opens a new XMLHttprequest
-    var pages = new XMLHttpRequest();
+    var pages = createXmlHttpRequestObject();
     //this url is supplied and number come from the id of the clicked
     //tab on the page
-    url = 'http://api.github.com/gists/public?page=' + number;
+    url = 'https://api.github.com/gists/public?page=' + number;
     //prepares the request and sends it
-    pages.open('GET', url, true);
-    pages.send();
+    if (pages) {
+        pages.open('GET', url, true);
+        pages.send();
+    }
     /**
      * Once the request is ready checks to make sure everything
      * has returned correctly.
@@ -48,6 +59,22 @@ function loadPages(number)
             }
         }
     };
+}
+
+/**
+ * Creates an XMLHttpRequest as appropriate per the browser.
+ * @return returns a new XMLHttpRequest()}
+ */
+function createXmlHttpRequestObject() {
+        var xmlHttp;
+       
+        if (window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+        }else {
+                xmlHttp = new ActiveXOjbect("Microsoft.XMLHTTP");
+        }
+       
+        return xmlHttp;
 }
 
 /**
